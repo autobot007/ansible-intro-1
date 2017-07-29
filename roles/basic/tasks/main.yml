@@ -1,0 +1,8 @@
+- name: "Installing htop"
+  yum: pkg=htop state=installed
+
+- name: "Installing VIM"
+  yum: pkg=vim state=installed
+
+- name: "Installing git"
+  yum: pkg=git state=installed
