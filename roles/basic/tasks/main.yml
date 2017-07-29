@@ -1,3 +1,4 @@
+---
 - name: "Installing htop"
   yum: pkg=htop state=installed
 
