@@ -1,0 +1,16 @@
+- name: "Installing additional software"
+  yum: pkg={{ item }} state=installed
+  with_items:
+  - vim
+  - dnsutils
+  - git
+  - ntp
+
+- name: "Adding bashrc"
+  copy: src=../file/bash.bashrc dest=/etc/bash.bashrc owner=root group=root mode=0644
+
+- name: "Remving gen's bashrc"
+  shell: creates=/home/gf/.bashrc_backup mv /home/bf/.bashrc /home/bf/.bashrc_backup
+
+- name: "root's bashrc"
+  shell: creates=/root/.bashrc_backup mv /.bashrc /home/gf/.bashrc_backup
